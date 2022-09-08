@@ -1,0 +1,10 @@
+<ul>
+    <li *ngFor="let link of navList; let i = index;">
+        <a [routerLink]="link.url" (click)="revealLink(i)">{{link.name}}</a>
+        <ul *ngIf="link.children">
+            <li *ngFor="let childLink of link.children">
+                <a [routerLink]="childLink.url">{{childLink.name}}</a>
+            </li>
+        </ul>
+    </li>
+</ul>
